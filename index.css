@@ -1,18 +1,24 @@
+body {
+  background-color:  hsl(20, 50%, 98%);
+}
+
 .images {
   width: 7%;
   height: 200px;
   margin: 10px;
   flex: 1 1 20%;
   margin: 30px;
+  position: relative;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   max-width: 60%;
-  background-color: black;
-  height: 100vh;
+  background-color: sl(20, 50%, 98%);
+  height: 150vh;
   margin-left:  100px;
+  margin-right: 10px;
   position: relative;
 }
 
@@ -29,30 +35,75 @@
   */
 
 .order-container {
-  min-width: 20%;
+  min-width: 25%;
   min-height: 30%;
-  background-color: blue;
+  background-color: white;
   position: absolute;
   top: 0;
   right: 0;
   margin-right: 30px;
+  margin-left: 10px;
   margin-top: 50px ;
-  /*margin-left: 20px*/
+  border-radius: 15px;
+}
+
+.order-container h2 {
+  color: hsl(14, 86%, 42%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 22px;
+  padding-left: 20px;
+}
+
+.order {
+  background-color: white;
+  margin: auto;
+  width: fit-content;
+}
+
+.order img {
+  margin-left: 50px;
+  padding-top: 15px;
+}
+
+.order p {
+  margin-top: 0;
+  color: hsl(12, 20%, 44%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 }
 
 .title {
-  padding-left: 100px;
+  padding-left: 130px;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 40px;
+  margin-bottom: 0;
 }
 
 .add-button {
   margin: auto;
   padding: 10px 10px;
-  border-radius: 20px;
+  border: solid 1px hsl(12, 20%, 44%);
+  border-radius: 25px;
   height: 45px;
-  width: 65%;
+  min-width: 65%;
   transform: translateY(-25px);
   display: flex;
   align-items: center;
+
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 
 }
 
@@ -62,3 +113,38 @@
   margin-right: 1px;
   margin-left: 5px;
 }
+
+.images div {
+  position: absolute;
+  background-color: hsl(20, 50%, 98%);
+  width: 100%;
+  padding-top: 0px;
+}
+
+.name {
+  color: hsl(12, 20%, 44%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.name-in-bold {
+  color: hsl(14, 65%, 9%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.price {
+  color: hsl(14, 86%, 42%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
