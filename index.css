@@ -2,12 +2,11 @@ body {
   background-color:  hsl(20, 50%, 98%);
 }
 
-.images {
-  width: 7%;
+.container .images {
+  width: auto;
   height: 200px;
-  margin: 10px;
   flex: 1 1 20%;
-  margin: 30px;
+  margin: 20px 30px;
   position: relative;
 }
 
@@ -28,6 +27,7 @@ body {
   border-radius: 15px;
   border: none;
 }
+  
 
 /*.container img:hover {
   border: solid 2px hsl(14, 86%, 42%);
@@ -93,7 +93,7 @@ body {
   padding: 10px 10px;
   border: solid 1px hsl(12, 20%, 44%);
   border-radius: 25px;
-  height: 45px;
+  max-height: 45px;
   min-width: 65%;
   transform: translateY(-25px);
   display: flex;
@@ -107,11 +107,12 @@ body {
 
 }
 
+
 .add-button .icon {
   /*background-color: black;*/
-  width: 35%;
-  margin-right: 1px;
-  margin-left: 5px;
+  width: 15%;
+  margin-right: 10px;
+  margin-left: 18px;
 }
 
 .images div {
@@ -146,5 +147,58 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
+}
+
+/*.text {
+  margin: 0;
+}
+  */
+  
+.images .selected-image {
+  border: solid 2px hsl(14, 86%, 42%);
+}
+
+.images .select-button {
+  display: flex;
+  justify-content: center;
+  background-color: hsl(14, 86%, 42%);
+  border: solid 3px hsl(14, 86%, 42%);
+  color: white;
+}
+
+.increase {
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+  margin-left: 50px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.increase img {
+  width: 10px;
+  height: auto;
+}
+
+.decrease {
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+  margin-right: 50px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrease img {
+  width: 10px;
+  height: auto;
 }
 
