@@ -2,9 +2,8 @@ const addButton = document.querySelectorAll('.js-add-button');
 const image = document.querySelectorAll('.js-images');
 const yourOrder = document.querySelector('.js-your-order');
 
-//generateOrderHTML();
 
-let order = JSON.parse(localStorage.getItem('order')) || [];
+let order = [];
 let orderQuantity = 0;
 
 async function loadProducts() {
@@ -23,7 +22,6 @@ function addToOrder(productName) {
         console.log(order);
       }
 
-      localStorage.setItem('order', JSON.stringify(order));
     })
   }).then(() => {
     displayOrder();
@@ -44,13 +42,46 @@ function displayOrder() {
             </div>
             
             <div class="button-div">
-              <button class="remove-item"><img src="/assets/images/icon-remove-item.svg"></button>
+              <button class="remove-item-button js-remove-item-button" data-order-id="${item.name}">x</button>
             </div>
             
           </div>  
         </d>
       `;
   })
+
+ removeOrder();
+}
+
+function removeOrder() {
+  
+  document.querySelectorAll('.js-remove-item-button')
+    .forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.js-order')
+          .innerHTML = '';
+
+        order.forEach((item, index) => {
+          if(item.name === btn.dataset.orderId) {
+            console.log('its working');
+            order.splice(index, 1);
+            console.log(order);
+          }
+
+          if(order.length === 0) {
+            document.querySelector('.js-order')
+              .innerHTML = `
+              <div class="order js-order">
+                <img src="assets/images/illustration-empty-cart.svg" alt="">
+                
+                <p>Your added items will appear here</p>
+              </div>`;
+          }
+        })
+
+        displayOrder();
+      });
+    })
 }
 
 function comfirmOrder() {
@@ -66,20 +97,6 @@ function comfirmOrder() {
 comfirmOrder();
 
 
-/*
-function generateOrderHTML() {
-
-  document.querySelector('.js-order-container')
-    .innerHTML = `
-      <h2 class="js-your-order">Your Order (0)</h2>
-      <div class="order js-order">
-        <img src="assets/images/illustration-empty-cart.svg" alt="">
-        
-        <p>Your added items will appear here</p>
-      </div>
-    `;
-}
-*/
 
 addButton.forEach((button) => {
   let quantity= 1;
@@ -87,7 +104,6 @@ addButton.forEach((button) => {
   button.addEventListener('click', () => {
     document.querySelector('.js-order')
       .innerHTML = '';
-
 
     let productName = button.dataset.productName;
 
@@ -133,5 +149,6 @@ addButton.forEach((button) => {
     yourOrder.innerHTML = `Your Order (${orderQuantity})`;
    
   })
-
 });
+
+
