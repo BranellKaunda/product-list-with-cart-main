@@ -1,7 +1,4 @@
 const addButton = document.querySelectorAll('.js-add-button');
-const image = document.querySelectorAll('.js-images');
-const yourOrder = document.querySelector('.js-your-order');
-
 
 let order = [];
 let orderQuantity = 0;
@@ -97,11 +94,12 @@ function comfirmOrder() {
 comfirmOrder();
 
 
-
 addButton.forEach((button) => {
   let quantity= 1;
   
   button.addEventListener('click', () => {
+
+    //removes default image empty order
     document.querySelector('.js-order')
       .innerHTML = '';
 
@@ -119,36 +117,33 @@ addButton.forEach((button) => {
         ${quantity}
       <button class="increase js-increase"><img src="assets/images/icon-increment-quantity.svg" alt=""></button>`
     ;
-
-    const increaseButton = document.querySelectorAll('.js-increase');
-    const decreaseButton = document.querySelectorAll('.js-decrease');
-    
-    increaseButton.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        quantity++;
-        orderQuantity +=1;
-      })
+ 
+    document.querySelectorAll('.js-increase')
+      .forEach((btn) => {
+        btn.addEventListener('click', () => {
+          quantity++;
+          orderQuantity +=1;
+        })
     })
 
-    decreaseButton.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        quantity--;
-        orderQuantity--;
-        if(quantity === 0) {
-          quantity = 0;
-        } else if (quantity === -1) {
-          quantity = 0;
-        }
-        
-        if(orderQuantity === -1) {
-          orderQuantity = 0;
-        }
-      })
+    document.querySelectorAll('.js-decrease')
+      .forEach((btn) => {
+        btn.addEventListener('click', () => {
+          quantity--;
+          orderQuantity--;
+          if(quantity === 0) {
+            quantity = 0;
+          } else if (quantity === -1) {
+            quantity = 0;
+          }
+          
+          if(orderQuantity === -1) {
+            orderQuantity = 0;
+          }
+        })
     });   
 
-    yourOrder.innerHTML = `Your Order (${orderQuantity})`;
+    document.querySelector('.js-your-order').innerHTML = `Your Order (${orderQuantity})`;
    
   })
 });
-
-
