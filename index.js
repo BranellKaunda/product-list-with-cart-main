@@ -35,7 +35,7 @@ function displayOrder() {
 
             <div class="details"> 
               <p class="item-name">${item.name}</p>
-              <p class="price"><span style="color: hsl(14, 86%, 42%);">1x</span> @ $${Number((item.price * 100) / 100).toFixed(2)}</p>
+              <p class="price"><span style="color: hsl(14, 86%, 42%);">${item.quantity}x</span> @ $${Number((item.price * 100) / 100).toFixed(2)}</p>
             </div>
             
             <div class="button-div">
@@ -93,34 +93,71 @@ function comfirmOrder() {
 
 comfirmOrder();
 
+function addQuantity(productName) {
+
+  let itemQuantity = 0;
+  itemQuantity++;
+
+  order.forEach((item) => {
+    
+    if (productName === item.name) {
+      item.quantity += itemQuantity;
+      document.querySelector('.js-order').innerHTML = '';
+      displayOrder();
+    }
+
+  })
+  
+  console.log(order);
+}
+
+function reduceQuantity(productName) {
+
+  let itemQuantity = 0;
+  itemQuantity++;
+
+  order.forEach((item) => {
+    
+    if (productName === item.name) {
+      item.quantity -= itemQuantity;
+      document.querySelector('.js-order').innerHTML = '';
+      displayOrder();
+    }
+
+  })
+  
+  console.log(order);
+}
+
 
 addButton.forEach((button) => {
   let quantity= 1;
   
   button.addEventListener('click', () => {
-
-    //removes default image empty order
-    document.querySelector('.js-order')
-      .innerHTML = '';
-
+    
     let productName = button.dataset.productName;
 
-    addToOrder(productName);
-    
     if (!button.classList.contains('select-button')) {
+      //removes default image empty order
+      document.querySelector('.js-order').innerHTML = '';
       button.classList.add('select-button');
+      addToOrder(productName);
       orderQuantity++;
-    } 
+    } else if (button.classList.contains('select-button')) {
+      orderQuantity += 0;
+    }
 
     button.innerHTML = `
-      <button class="decrease js-decrease" ><img src="assets/images/icon-decrement-quantity.svg" alt=""></button> 
+      <button class="decrease js-decrease"><img src="assets/images/icon-decrement-quantity.svg" alt=""></button> 
         ${quantity}
-      <button class="increase js-increase"><img src="assets/images/icon-increment-quantity.svg" alt=""></button>`
+      <button class="increase js-increase" data-product-name="${productName}"><img src="assets/images/icon-increment-quantity.svg" alt=""></button>`
     ;
  
     document.querySelectorAll('.js-increase')
       .forEach((btn) => {
         btn.addEventListener('click', () => {
+
+          addQuantity(productName);
           quantity++;
           orderQuantity +=1;
         })
@@ -129,15 +166,18 @@ addButton.forEach((button) => {
     document.querySelectorAll('.js-decrease')
       .forEach((btn) => {
         btn.addEventListener('click', () => {
+
+          reduceQuantity(productName);
           quantity--;
           orderQuantity--;
-          if(quantity === 0) {
+
+          if (quantity === 0) {
             quantity = 0;
           } else if (quantity === -1) {
             quantity = 0;
           }
           
-          if(orderQuantity === -1) {
+          if (orderQuantity === -1) {
             orderQuantity = 0;
           }
         })

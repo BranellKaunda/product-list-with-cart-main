@@ -15,7 +15,7 @@ body {
   flex-wrap: wrap;
   max-width: 60%;
   background-color: sl(20, 50%, 98%);
-  height: 150vh;
+  height: 130vh;
   margin-left:  100px;
   margin-right: 10px;
   position: relative;
@@ -28,12 +28,6 @@ body {
   border: none;
 }
   
-
-/*.container img:hover {
-  border: solid 2px hsl(14, 86%, 42%);
-}
-  */
-
 .order-container {
   min-width: 25%;
   min-height: 30%;
@@ -45,7 +39,6 @@ body {
   margin-left: 10px;
   margin-top: 50px ;
   border-radius: 15px;
-  /*display: block;*/
 }
 
 .order-container h2 {
@@ -109,7 +102,6 @@ body {
 
 }
 
-
 .add-button .icon {
   /*background-color: black;*/
   width: 15%;
@@ -121,8 +113,13 @@ body {
   position: absolute;
   background-color: hsl(20, 50%, 98%);
   width: 100%;
-  padding-top: 0px;
 }
+
+.images .text {
+  margin-top: 20px;
+  
+}
+
 
 .name {
   color: hsl(12, 20%, 44%);
