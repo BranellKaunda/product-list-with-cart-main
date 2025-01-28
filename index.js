@@ -60,8 +60,6 @@ function removeOrder() {
         order.forEach((item, index) => {
           if(item.name === btn.dataset.orderId) {
             order.splice(index, 1);
-
-            //document.querySelector('.js-your-order').innerHTML = `Your Order (${item.quantity})`;
           }
 
           if(order.length === 0) {
@@ -76,6 +74,7 @@ function removeOrder() {
               document.querySelector('.js-total-container')
               .innerHTML = '';
 
+              location.reload();
           }
         })
 
@@ -103,7 +102,6 @@ function addQuantity(productName) {
   })
   
   displayOrder();
-  console.log(order);
 }
 
 function reduceQuantity(productName) {
@@ -116,7 +114,6 @@ function reduceQuantity(productName) {
       document.querySelector('.js-order').innerHTML = '';
     }
 
-    //improve feature
     if(item.quantity === 0) {
       item.quantity = 1;
     }
@@ -124,7 +121,6 @@ function reduceQuantity(productName) {
   })
   
   displayOrder();
-  console.log(order);
 }
 
 
@@ -200,7 +196,7 @@ async function renderTotalHTML() {
         </div>
 
         <div class="total-price">
-          $${formatPrice(item.quantity * totalPrice)}
+          $${formatPrice(totalPrice * item.quantity)}
         </div>
       </div>
 
@@ -217,10 +213,58 @@ async function renderTotalHTML() {
     `;
 
     document.querySelector('.js-confirm-order-button').addEventListener('click', () => {
-     console.log('hello');
+     renderPopup();
+     document.querySelector('.js-pop-up-container').style.display = 'block';
     })
 
   })
 
+}
+
+function renderPopup() {
+  let totalPrice = 0;
+
+  order.forEach((item) => {
+    totalPrice += item.price * item.quantity;
+
+    document.querySelector('.js-pop-up-orders')
+      .innerHTML += `
+        
+        <div class="pop-up-items">
+          <div class="pop-up-items-div">
+            <div class="pop-up-thumbnail">
+              <img src="${item.image.thumbnail}">
+            </div>
+
+            <div class="pop-up-item-name">
+              ${item.name}
+              <p>${item.quantity}x @$${formatPrice(item.price)}</p>
+            </div>
+
+            <div class="pop-up-price">
+              $${formatPrice((item.quantity * item.price))}
+            </div>
+          </div>
+           
+        </div>
+
+      `;
+
+    document.querySelector('.js-pop-up-total-container')
+      .innerHTML = `
+        <div class="pop-up-total">
+            Order Total
+        </div>
+
+        <div class="pop-up-total-price">
+          $${formatPrice(totalPrice)}
+        </div>
+    `;
+  })
 
 }
+
+document.querySelector('.js-start-new-order')
+  .addEventListener('click', () => {
+    location.reload();
+  })

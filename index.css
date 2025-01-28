@@ -93,13 +93,12 @@ body {
   transform: translateY(-25px);
   display: flex;
   align-items: center;
-
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
-
+  cursor: pointer;
 }
 
 .add-button .icon {
@@ -176,6 +175,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .increase img {
@@ -194,6 +194,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .decrease img {
@@ -246,6 +247,7 @@ body {
   border: solid 1px hsl(12, 20%, 44%);;
   padding-bottom: 3px;
   color: hsl(12, 20%, 44%);; 
+  cursor: pointer;
 }
 
 .total-container {
@@ -313,6 +315,136 @@ body {
   font-family: "Outfit", serif;
   font-weight: 300;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.pop-up-container {
+  background-color: white ;
+  border-radius: 11px;
+  max-width: 35%;
+  min-height:auto;
+  display:none;
+  position: fixed;
+  z-index: 1;
+  top: 13%;
+  left:33%;
+}
+
+.pop-up-container .confirmed-icon {
+  margin-left: 11px;
+  margin-top: 10px;
+}
+
+.pop-up-container h1 {
+  color: black;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  margin-left: 12px;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.pop-up-container p {
+  font-family: "Outfit", serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: hsl(12, 20%, 44%);
+  margin-left: 14px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 
+.pop-up-items-div {
+  max-height: 12vh;
+  display: flex;
+  margin-right: 10px;
+  background-color: hsl(20, 50%, 98%);
+  border: solid 1px rgb(190, 180, 180);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: flex;
+}
+
+.pop-up-orders-container {
+  background-color: hsl(20, 50%, 98%);
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 10px;
+}
+
+.pop-up-items .pop-up-price {
+  margin-left: 180px;
+  margin-top: 30px;
+  color: hsl(14, 65%, 9%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.pop-up-items .pop-up-item-name {
+  margin-left: 10px;
+  margin-top: 5px;
+  max-width: 25%;
+  color: hsl(14, 65%, 9%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.start-new-order-btn {
+  min-width: 96%;
+  margin-left: 12px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  min-height: 5vh;
+  border: none;
+  border-radius: 30px;
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+  font-family: "Outfit", serif;
+  font-weight: 300;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pop-up-total-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: hsl(20, 50%, 98%) ;
+}
+
+.pop-up-total-container .pop-up-total-price {
+  margin-top: 6px;
+  margin-left: 335px;
+  margin-bottom: 10px;
+  color: hsl(14, 65%, 9%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+
+}
+
+.pop-up-total-container .pop-up-total {
+  margin-left: 5px;
+  margin-top: 8px;
+  color: hsl(12, 20%, 44%);
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
