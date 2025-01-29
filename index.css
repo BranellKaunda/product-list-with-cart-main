@@ -24,8 +24,10 @@ body {
 .container img {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  object-fit: cover;
   border: none;
+  border-radius: 12px;
+  
 }
   
 .order-container {
@@ -414,6 +416,10 @@ body {
   font-weight: 300;
   font-size: 15px;
   cursor: pointer;
+}
+
+.pop-up-thumbnail img {
+  object-fit: cover;
 }
 
 .pop-up-total-container {
