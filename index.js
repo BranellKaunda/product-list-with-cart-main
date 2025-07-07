@@ -88,7 +88,6 @@ function formatPrice(number) {
   return Number((number * 100) / 100).toFixed(2);
 }
 
-
 function addQuantity(productName) {
   let itemQuantity = 0;
   

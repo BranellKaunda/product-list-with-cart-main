@@ -1,24 +1,15 @@
 body {
-  background-color:  hsl(20, 50%, 98%);
-}
-
-.container .images {
-  width: auto;
-  height: 200px;
-  margin: 20px 30px;
-  position: relative;
+  background-color: hsl(20, 50%, 98%);
 }
 
 .container {
   display: grid;
-  gap: 0.5rem 1rem;
+  gap: 3rem;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 55%;
+  padding: 20px;
+  max-width: 50%;
+  margin-left: 4%;
   background-color: sl(20, 50%, 98%);
-  min-height: 130vh;
-  margin-left:  100px;
-  margin-right: 10px;
-  position: relative;
 }
 
 .container img {
@@ -27,19 +18,15 @@ body {
   object-fit: cover;
   border: none;
   border-radius: 12px;
-  
 }
-  
+
 .order-container {
+  position: absolute;
   min-width: 25%;
   min-height: 30%;
   background-color: white;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 30px;
-  margin-left: 10px;
-  margin-top: 50px ;
+  top: 10%;
+  right: 5%;
   border-radius: 15px;
 }
 
@@ -76,7 +63,7 @@ body {
 }
 
 .title {
-  padding-left: 130px;
+  margin-left: 5%;
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -85,42 +72,38 @@ body {
   margin-bottom: 0;
 }
 
+.images {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 1rem;
+  background-color: hsl(20, 50%, 98%);
+  max-width: 100%;
+  min-height: auto;
+  position: relative;
+}
+
 .add-button {
-  z-index: 1;
-  margin-left: 50px;
-  padding: 10px 10px;
+  padding: 12px;
+  border-radius: 20px;
   border: solid 1px hsl(12, 20%, 44%);
-  border-radius: 25px;
-  max-height: 45px;
-  min-width: 65%;
-  transform: translateY(-25px);
   display: flex;
-  align-items: center;
+  justify-content: space-around;
   font-family: "Outfit", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
   cursor: pointer;
+  position: absolute;
+  left: 23%;
+  top: 55%;
 }
 
 .add-button .icon {
-  /*background-color: black;*/
   max-width: 15%;
   margin-right: 7px;
   margin-left: 7px;
 }
-
-.images div {
-  position: absolute;
-  background-color: hsl(20, 50%, 98%);
-  max-width: 100%;
-}
-
-.images .text {
-  margin-top: 20px;
-}
-
 
 .name {
   color: hsl(12, 20%, 44%);
@@ -153,20 +136,26 @@ body {
   margin: 0;
 }
   */
-  
+
 .images .selected-image {
   border: solid 2px hsl(14, 86%, 42%);
 }
 
 .images .select-button {
-  display: flex;
-  justify-content: center;
   background-color: hsl(14, 86%, 42%);
   border: solid 3px hsl(14, 86%, 42%);
-  justify-content:space-between;
+  justify-content: space-around;
   color: white;
-  margin-left: 50px;
-  max-width: 100%;
+  padding: 12px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .increase {
@@ -249,9 +238,9 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 5px;
-  border: solid 1px hsl(12, 20%, 44%);;
+  border: solid 1px hsl(12, 20%, 44%);
   padding-bottom: 3px;
-  color: hsl(12, 20%, 44%);; 
+  color: hsl(12, 20%, 44%);
   cursor: pointer;
 }
 
@@ -270,7 +259,6 @@ body {
   font-weight: 600;
   font-style: normal;
   font-size: 20px;
-
 }
 
 .total-container .total {
@@ -324,15 +312,15 @@ body {
 }
 
 .pop-up-container {
-  background-color: white ;
+  background-color: white;
   border-radius: 11px;
   max-width: 35%;
-  min-height:auto;
-  display:none;
+  min-height: auto;
+  display: none;
   position: fixed;
   z-index: 1;
   top: 13%;
-  left:33%;
+  left: 33%;
 }
 
 .pop-up-container .confirmed-icon {
@@ -361,7 +349,6 @@ body {
   margin-right: 10px;
   margin-top: 5px;
 }
-
 
 .pop-up-items-div {
   max-height: 12vh;
@@ -431,7 +418,7 @@ body {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: hsl(20, 50%, 98%) ;
+  background-color: hsl(20, 50%, 98%);
 }
 
 .pop-up-total-container .pop-up-total-price {
@@ -444,7 +431,6 @@ body {
   font-weight: 600;
   font-style: normal;
   font-size: 20px;
-
 }
 
 .pop-up-total-container .pop-up-total {
